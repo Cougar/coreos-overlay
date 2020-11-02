@@ -1,9 +1,13 @@
 # Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
+# Flatcar: Based on coreutils-8.32-r1.ebuild from commit
+# 644f513293168d45627a987fe44ff49a09167219 in Gentoo repo (see
+# https://gitweb.gentoo.org/repo/gentoo.git/plain/sys-apps/coreutils/coreutils-8.32-r1.ebuild?id=644f513293168d45627a987fe44ff49a09167219).
+
 EAPI=7
 
-PYTHON_COMPAT=( python3_{6,7,8} )
+PYTHON_COMPAT=( python3_{6,7} )
 
 inherit eutils flag-o-matic python-any-r1 toolchain-funcs
 
@@ -20,7 +24,7 @@ SRC_URI="mirror://gnu/${PN}/${P}.tar.xz
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~alpha amd64 arm arm64 hppa ~ia64 ~m68k ~mips ppc ppc64 ~riscv s390 sparc x86 ~x86-linux"
-IUSE="acl caps gmp hostname kill multicall nls selinux +split-usr static test vanilla xattr"
+IUSE="acl caps gmp hostname kill multicall nls selinux -split-usr static test vanilla xattr"
 RESTRICT="!test? ( test )"
 
 LIB_DEPEND="acl? ( sys-apps/acl[static-libs] )
